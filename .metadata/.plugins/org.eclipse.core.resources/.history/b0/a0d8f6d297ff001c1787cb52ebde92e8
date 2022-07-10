@@ -1,0 +1,63 @@
+package com.tut;
+
+import java.util.Date;
+
+import javax.transaction.Transaction;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Project Started" );
+        
+        //SessionFactory factory=new Configuration().configure().buildSessionFactory();
+        //or
+        Configuration cfg = new Configuration();
+        cfg.configure("hibernate.cfg.xml");
+        SessionFactory factory=cfg.buildSessionFactory();
+        
+        //creating student
+        Student st = new Student();
+        st.setId(102);
+        st.setCity("Silchar");
+        st.setName("Zahid");
+        
+        //System.out.println(st);
+        
+        //Creating object of address class
+        Address ad = new Address();
+        ad.setStreet("street1");
+        ad.setCity("Delhi");
+        ad.setOpen(true);
+        ad.setAddedDate(new Date());
+        ad.setMarks(123.33);
+        
+        
+        
+        
+        
+        
+        
+        ////Datebase hibernate connection
+        Session session = factory.getCurrentSession();
+        
+        //               
+        org.hibernate.Transaction tx = session.beginTransaction();
+        session.save(st);	//student table
+        session.save(ad);	//student address table 
+        
+        //session.getTransaction().commit();
+        tx.commit();
+
+//        System.out.println(factory);  // Found Object org.hibernate.internal.SessionFactoryImpl@18a645fd
+//        System.out.println(factory.isClosed());         
+
+        
+        
+    }
+}

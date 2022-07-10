@@ -1,0 +1,37 @@
+package com.state;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * @author zahid
+ *
+ */
+public class StateDemo {
+	
+//												Transient state
+//												persistent state
+//												detached state
+//												removed state
+//												
+//												session object
+//												database
+	
+	public static void main(String[] args) {
+		System.out.println("Example: ");
+		
+		SessionFactory f = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		
+		//Creating student object
+		Student student= new Student();
+		
+		
+		
+		
+		f.close();
+		
+	
+	}
+	
+
+}

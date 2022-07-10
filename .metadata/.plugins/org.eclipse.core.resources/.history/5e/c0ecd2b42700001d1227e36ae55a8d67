@@ -1,0 +1,24 @@
+package com.many2many;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class MappingDemo {
+	public static void main(String[] args) {
+		Configuration cfg = new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		
+		
+			Emp e1 = new Emp();
+			Emp e2 = new Emp();
+			
+			
+			e1.setEid(eid);
+			
+		
+		
+		factory.close();
+	}
+
+}

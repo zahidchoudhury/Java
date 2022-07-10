@@ -1,0 +1,18 @@
+package com.state;
+
+public class StateDemo {
+	
+//												Transient state
+//												persistent state
+//												detached state
+//												removed state
+//												
+//												session object
+//												database
+	
+	public static void main(String[] args) {
+		System.out.println("Example: ");
+	}
+	
+
+}

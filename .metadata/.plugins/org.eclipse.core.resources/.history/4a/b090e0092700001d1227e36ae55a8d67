@@ -1,0 +1,18 @@
+package com.many2many;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+@Entity
+public class Project {
+	@Id
+	private int pid;
+	@Column(name="project_name")
+	private String projectname;
+	
+	@ManyToMany
+	private List<Emp> emps;
+
+}

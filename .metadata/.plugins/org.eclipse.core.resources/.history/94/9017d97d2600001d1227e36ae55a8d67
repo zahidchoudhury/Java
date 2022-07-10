@@ -1,0 +1,7 @@
+package com.many2many;
+
+public class Project {
+	private int pid;
+	private String pname;
+
+}

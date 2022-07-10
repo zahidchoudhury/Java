@@ -1,0 +1,8 @@
+package com.tut;
+
+public class Address {
+	private int addressId;
+	private String street;
+	private String city;
+	
+}

@@ -1,0 +1,39 @@
+package com.cascade;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+import com.map.Answer;
+import com.map.Question;
+
+public class CascadeExample {
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure().buildSessionFactory();
+		Session s = factory.openSession();
+		
+		Question q1 = new Question();
+		
+		q1.setQuestion_id(673);
+		q1.setQuestion("What is Cascading");
+		
+		Answer a1 = new Answer(2343, "1. In hibernate it is a important concept");
+		Answer a2 = new Answer(2343, "2. In hibernate it is a important concept");
+		Answer a3 = new Answer(2343, "3. In hibernate it is a important concept");
+		
+		
+		List<Answer> list = new ArrayList<Answers>();
+		list.add(1);
+		
+		q1.setAnswers(answers);
+
+		
+		
+		s.close();
+		factory.close();
+	}
+	
+}

@@ -1,0 +1,12 @@
+package com.many2many;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Emp {
+	@Id
+	private int eid;
+	private String ename;
+
+}
